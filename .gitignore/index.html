@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #wrapper{
+            max-width: 530px;
+            border: 1px solid #808080;
+            padding: 30px 20px 15px;
+            margin: auto;
+        }
+
+        header *{
+            text-align: center;
+
+        }
+
+        h1{
+            font-size: 30px;
+        }
+
+        h2{
+            margin-top: 40px;
+            color: #5c5c5c;
+            font-size: 25px;
+        }
+
+        #calculator > div:first-of-type{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap:wrap ;
+        }
+
+        #calculator > div:first-of-type > button{
+            width: 160px;
+            height: 95px;
+            color: #fff;
+            font-weight: bold;
+            background: #1e5485; /* Za pretrazivace koji ne potrzavaju 'gradient' */
+            background: linear-gradient(#1e5485, #06325e);
+            border: 1px solid #002a55;
+            border-radius: 3px;
+            margin: 5px 0 ;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #calculator > div > button.operator{
+            background: #fea332; /* Za pretrazivace koji ne potrzavaju 'gradient' */
+            background: linear-gradient(#feb853, #cb792c);
+            border: none;
+        }
+
+
+        #calculator > div:first-of-type > button:active {
+            background: #2b71b0; /* Za pretrazivace koji ne potrzavaju 'gradient' */
+            background: linear-gradient(#2b71b0, #134d87);
+        }
+
+
+
+        #calculator > div > button.operator:active {
+            background: #febd5c; /* Za pretrazivace koji ne potrzavaju 'gradient' */
+            background: linear-gradient(#fea25f, #cb9b49);
+            border: none;
+        }
+
+        hr{
+            margin: 20px -20px 15px;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        #calculator > div:last-of-type{
+            text-align: right;
+        }
+
+        #calculator > div:last-of-type > button {
+            padding: 20px 10px;
+            display: inline-block;
+            color: #fff;
+            border: 1px solid #ca782c;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .strelica-levo{
+            border: solid;
+            box-sizing: border-box;
+            height: 20px;
+            border-width: 12px 15px 12px 0px;
+            border-color: transparent #fff transparent transparent;
+            position: relative;
+        }
+        .crtica{
+            border: solid;
+            box-sizing: border-box;
+            height: 20px;
+            border-width: 12px 3px;
+            position: relative;
+        }
+
+        button{
+            outline: none;
+        }
+        .obrisi::before{
+            border-right: 5px solid red;
+        }
+        /* Media */
+
+        @media only screen and (max-width: 560px) {
+
+
+            #calculator > div:first-of-type > button{
+                height: 75px;
+            }
+        }
+
+        @media only screen and (max-width: 440px) {
+
+            #calculator > div:first-of-type > button {
+                height: 45px;
+            }
+        }
+
+        @media only screen and (max-width: 410px) {
+
+            #calculator > div:first-of-type > button {
+                width: 45%;
+                font-size: 25px;
+            }
+
+            #calculator > div:last-of-type{
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div style="display: flex; height: 98vh">
+    <div id="wrapper">
+        <header>
+            <h1>Quick Ticket</h1>
+            <h2>Input Quick Ticket Code</h2>
+            <div style=" height: 100px;border: 1px solid #ddd;margin-bottom:15px ;"></div>
+        </header>
+        <div id="calculator">
+            <div>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>0</button>
+                    <button>6</button>
+
+                    <button class="operator">
+                        <span class="crtica"></span>
+                        <span class='strelica-levo'></span>
+                    </button>
+                <button class="operator">C</button>
+
+            </div>
+
+            <hr>
+            <div>
+                <button class="operator">OTKAŽITE</button>
+                <button class="operator">POTVRDITE</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
